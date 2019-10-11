@@ -164,3 +164,7 @@ table td{
 #add-course{
     display: none;
 }
+
+#add-course-button{
+    cursor: pointer;
+}
