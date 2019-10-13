@@ -96,6 +96,26 @@ $(function() {
         return parseFloat(gpa.toFixed(2));
     }
 
+    $("#save-course").click(function() {
+        // read form values into new Course object
+        const newCourse = new Course(
+            $('#title').val(),
+            $('#semester').val(),
+            $('#grade').val()
+        ); 
+        courses.append(newCourse);
+
+        // Update courses table
+        addCourseToTable(newCourse); 
+
+        // Update GPA
+        user.gpa = calculateGPA();
+        updateUserView();
+   
+        // Reset form
+        clearFields();
+    });
+
     //Task 6
 
     $("#cancel-course").on('click', function() {
