@@ -34,6 +34,13 @@ $(function() {
         tableBody.append(tabelRow);
     }
 
+    function updateUserView() {
+        $("#name").text(user.firstname + " " + user.lastname);
+        $("#birthdate").text(user.birthdate);
+        $("#faculty").text(user.faculty);
+        $("#gpa").text(user.gpa);
+    }
+
     function init() {
         for (const course of courses) {
             addCourseToTable(course);
