@@ -1,5 +1,4 @@
 $(function() {
-    var user = new User("John", "Doe", "11/10/1990", "Software Engineering", 2.75);
     var courses = [
         new Course("Agile software development", 1, 82),
         new Course("System modeling", 1, 85), 
@@ -10,6 +9,9 @@ $(function() {
         new Course("Software Testing", 3, 93),
         new Course("OOP", 2, 96)
     ];
+
+    var user = new User("John", "Doe", "11/10/1990", "Software Engineering", calculateGPA());
+   
     init();
 
     function addCourseToTable(course) {
