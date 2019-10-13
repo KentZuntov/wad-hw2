@@ -1,6 +1,10 @@
 $(function() {
     var user = new User("John", "Doe", "12.12.1997", "Science and Technology", 4.02);
     var courses = [
+        new Course("Agile software development", 1, 82),
+        new Course("System modeling", 1, 85), 
+        new Course("Object-oriented programming", 2, 99),
+        new Course("Estonian language Level A2", 2, 65),
         new Course("Software Project", 5, 81),
         new Course("Web Application Development", 5, 85),
         new Course("Software Testing", 3, 93),
