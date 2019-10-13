@@ -9,11 +9,16 @@ $(function () {
     init();
 
     function addCourseToTable(course) { 
+        const tableBody = $("#courses tbody");
+
+        // get the number of courses in table and calculate number for new course 
+        const newCourseNumber = tableBody.children().length + 1;
+
         // create table row element
         const tabelRow = $("<tr></tr>");
 
         // create table cell elements
-        const number = $("<td></td>").append(i + 5);
+        const number = $("<td></td>").append(newCourseNumber);
         const title = $("<td></td>").append(course.title);
         const semester = $("<td></td>").append(course.semester);
         const grade = $("<td></td>").append(course.grade);
@@ -22,7 +27,7 @@ $(function () {
         tabelRow.append(number, title, semester, grade);
 
         // append table row element to table body
-        $("#courses tbody").append(tabelRow);
+        tableBody.append(tabelRow);
     } 
 
     function init() {
