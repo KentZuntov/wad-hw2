@@ -8,19 +8,26 @@ $(function () {
     ];
     init();
 
+    function addCourseToTable(course) { 
+        // create table row element
+        const tabelRow = $("<tr></tr>");
+
+        // create table cell elements
+        const number = $("<td></td>").append(i + 5);
+        const title = $("<td></td>").append(course.title);
+        const semester = $("<td></td>").append(course.semester);
+        const grade = $("<td></td>").append(course.grade);
+
+        // add table cells to row element
+        tabelRow.append(number, title, semester, grade);
+
+        // append table row element to table body
+        $("#courses tbody").append(tabelRow);
+    } 
+
     function init() {
-        let tabelBody = $("#courses tbody");
-
-        for (let i = 0; i < courses.length; i++) {
-            let currentCourse = courses[i];
-            let tabelRow = $("<tr></tr>");
-            let number = $("<td></td>").append(i + 5);
-            let title = $("<td></td>").append(currentCourse.title);
-            let semester = $("<td></td>").append(currentCourse.semester);
-            let grade = $("<td></td>").append(currentCourse.grade);
-
-            tabelRow.append(number, title, semester, grade);
-            tabelBody.append(tabelRow);
+        for (const course of courses) {
+            addCourseToTable(course);
         }
     }
 
