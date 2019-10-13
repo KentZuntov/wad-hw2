@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     var user = new User("John", "Doe", "12.12.1997", "Science and Technology", 4.02);
     var courses = [
         new Course("Software Project", 5, 81),
@@ -24,19 +24,19 @@ $(function () {
         }
     }
 
-    $("#profile-button").on('click', function (event) {
+    $("#profile-button").on('click', function(event) {
         $(event.target).addClass('active');
         $("#profile-container").addClass('active');
         $("#courses-button, #courses-container").removeClass('active');
     });
 
-    $("#courses-button").on('click', function (event) {
+    $("#courses-button").on('click', function(event) {
         $(event.target).addClass('active');
         $("#courses-container").addClass('active');
         $("#profile-button, #profile-container").removeClass('active');
     });
 
-    $("#add-course-button").on('click', function () {
+    $("#add-course-button").on('click', function() {
         $("#add-course").show();
     });
 
@@ -46,38 +46,45 @@ $(function () {
     function calculateGPA() {
         function calculateCourseGPAPoint(courseGrade) {
             if (courseGrade > 90) {
-                return 4; 
+                return 4;
             } else if (courseGrade > 80) {
                 return 3;
             } else if (courseGrade > 70) {
                 return 2;
-            } else if (courseGrade > 60) {  
-                return 1; 
+            } else if (courseGrade > 60) {
+                return 1;
             } else if (courseGrade > 50) {
                 return 0.5;
             } else {
-                return 0; 
+                return 0;
             }
-        } 
+        }
 
         let coursePoints = 0;
-        
-        for (const course of courses) { 
+
+        for (const course of courses) {
             coursePoints += calculateCourseGPAPoint(course.grade);
         }
-        
+
         // calculate gpa
         let gpa = coursePoints / courses.length;
 
         //round to two decimal points
         return parseFloat(gpa.toFixed(2));
     }
-    
-    //TODO
+
     //Task 6
-    
-    $("#cancel-course").on('click', function () {
-        
+
+    $("#cancel-course").on('click', function() {
+        $('span[id=add-course]').hide();
+        clearFields();
     })
+
+    function clearFields() {
+        $('input[id=title]').val('');
+        $('input[id=semester]').val('');
+        $('input[id=grade]').val('');
+
+    }
 
 });
