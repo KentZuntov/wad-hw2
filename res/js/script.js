@@ -103,10 +103,10 @@ $(function() {
             $('#semester').val(),
             $('#grade').val()
         ); 
-        courses.append(newCourse);
 
         // Update courses table
-        addCourseToTable(newCourse); 
+        courses.push(newCourse);
+        addCourseToTable(newCourse);
 
         // Update GPA
         user.gpa = calculateGPA();
