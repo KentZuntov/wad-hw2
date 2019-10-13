@@ -47,8 +47,9 @@ $(function () {
         $("#add-course").show();
     });
 
-    //TODO
-    //Task 5
+    function setGPA(gpa) { 
+        $("gpa").text(gpa);
+    }
 
     function calculateGPA() {
         function calculateCourseGPAPoint(courseGrade) {
