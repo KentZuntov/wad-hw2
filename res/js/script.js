@@ -44,7 +44,22 @@ $(function () {
     //Task 5
 
     function calculateGPA() {
-
+        function calculateCourseGPAPoint(courseGrade) {
+            if (courseGrade > 90) {
+                return 4; 
+            } else if (courseGrade > 80) {
+                return 3;
+            } else if (courseGrade > 70) {
+                return 2;
+            } else if (courseGrade > 60) {  
+                return 1; 
+            } else if (courseGrade > 50) {
+                return 0.5;
+            } else {
+                return 0; 
+            }
+        } 
+        // TODO
     }
     
     //TODO
