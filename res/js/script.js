@@ -8,7 +8,7 @@ $(function() {
     ];
     init();
 
-    function addCourseToTable(course) { 
+    function addCourseToTable(course) {
         const tableBody = $("#courses tbody");
 
         // get the number of courses in table and calculate number for new course 
@@ -28,7 +28,7 @@ $(function() {
 
         // append table row element to table body
         tableBody.append(tabelRow);
-    } 
+    }
 
     function init() {
         for (const course of courses) {
@@ -52,7 +52,7 @@ $(function() {
         $("#add-course").show();
     });
 
-    function setGPA(gpa) { 
+    function setGPA(gpa) {
         $("gpa").text(gpa);
     }
 
@@ -89,7 +89,6 @@ $(function() {
     //Task 6
 
     $("#cancel-course").on('click', function() {
-        $('span[id=add-course]').hide();
         clearFields();
     })
 
@@ -97,6 +96,7 @@ $(function() {
         $('input[id=title]').val('');
         $('input[id=semester]').val('');
         $('input[id=grade]').val('');
+        $('span[id=add-course]').hide();
 
     }
 
