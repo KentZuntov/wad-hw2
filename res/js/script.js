@@ -59,7 +59,18 @@ $(function () {
                 return 0; 
             }
         } 
-        // TODO
+
+        let coursePoints = 0;
+        
+        for (const course of courses) { 
+            coursePoints += calculateCourseGPAPoint(course.grade);
+        }
+        
+        // calculate gpa
+        let gpa = coursePoints / courses.length;
+
+        //round to two decimal points
+        return parseFloat(gpa.toFixed(2));
     }
     
     //TODO
