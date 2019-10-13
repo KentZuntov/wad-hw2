@@ -63,10 +63,6 @@ $(function() {
         $("#add-course").show();
     });
 
-    function setGPA(gpa) {
-        $("gpa").text(gpa);
-    }
-
     function calculateGPA() {
         function calculateCourseGPAPoint(courseGrade) {
             if (courseGrade > 90) {
