@@ -42,6 +42,7 @@ $(function() {
     }
 
     function init() {
+        updateUserView();
         for (const course of courses) {
             addCourseToTable(course);
         }
