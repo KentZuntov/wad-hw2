@@ -63,7 +63,7 @@ $(function() {
     });
 
     $("#add-course-button").on('click', function() {
-        $("#add-course").show();
+        $("#add-course").toggle();
     });
 
     function calculateGPA() {
